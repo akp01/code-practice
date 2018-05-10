@@ -17,15 +17,17 @@ public class FixedThreadPoolExecutorTest {
 	 */
 	public static void main(String[] args) {
 		
-		ExecutorService executor = Executors.newFixedThreadPool(5);
-		executor.submit(new Task1());
-		executor.submit(new Task2());
-		executor.submit(new Task1());
-		executor.submit(new Task3());
-		executor.submit(new Task2());
-		executor.submit(new Task1());
-		executor.submit(new Task2());
-		executor.submit(new Task3());
+		int count = 0;
+		ExecutorService executor = Executors.newFixedThreadPool(3);
+		
+		executor.submit(new Task1(++count));
+		executor.submit(new Task2(++count));
+		executor.submit(new Task1(++count));
+		executor.submit(new Task3(++count));
+		executor.submit(new Task2(++count));
+		executor.submit(new Task1(++count));
+		executor.submit(new Task2(++count));
+		executor.submit(new Task3(++count));
 		executor.shutdown();
 	}
 
