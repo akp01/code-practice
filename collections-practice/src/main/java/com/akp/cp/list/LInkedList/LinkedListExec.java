@@ -1,4 +1,4 @@
-package com.akp.collection.list.LInkedList;
+package com.akp.cp.list.LInkedList;
 import java.util.Iterator;
 import java.util.LinkedList;
 

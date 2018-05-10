@@ -1,4 +1,4 @@
-package com.java9s.tutorials.java.generics;
+package com.akp.cp.generics;
 
 public class Guest {
 	public static void main(String[] args) {

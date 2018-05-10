@@ -1,4 +1,4 @@
-package com.akp.collection.list;
+package com.akp.cp.list.ArrayList;
 import java.util.ArrayList;
 import java.util.Iterator;
 
