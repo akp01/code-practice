@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
  * @author akp
  *
  */
-public class ExecutorTest {
+public class FixedThreadPoolExecutorTest {
 
 	/**
 	 * @param args
@@ -19,13 +19,13 @@ public class ExecutorTest {
 		
 		ExecutorService executor = Executors.newFixedThreadPool(5);
 		executor.submit(new Task1());
+		executor.submit(new Task2());
 		executor.submit(new Task1());
+		executor.submit(new Task3());
+		executor.submit(new Task2());
 		executor.submit(new Task1());
-		executor.submit(new Task1());
-		executor.submit(new Task1());
-		executor.submit(new Task1());
-		executor.submit(new Task1());
-		executor.submit(new Task1());
+		executor.submit(new Task2());
+		executor.submit(new Task3());
 		executor.shutdown();
 	}
 
