@@ -18,15 +18,17 @@ public class ExecutorTest {
 	public static void main(String[] args) {
 		
 		ExecutorService executor = Executors.newFixedThreadPool(5);
-		executor.submit(new MyTask());
-		executor.submit(new MyTask());
-		executor.submit(new MyTask());
-		executor.submit(new MyTask());
-		executor.submit(new MyTask());
-		executor.submit(new MyTask());
-		executor.submit(new MyTask());
-		executor.submit(new MyTask());
+		executor.submit(new Task1());
+		executor.submit(new Task1());
+		executor.submit(new Task1());
+		executor.submit(new Task1());
+		executor.submit(new Task1());
+		executor.submit(new Task1());
+		executor.submit(new Task1());
+		executor.submit(new Task1());
 		executor.shutdown();
 	}
 
 }
+
+
