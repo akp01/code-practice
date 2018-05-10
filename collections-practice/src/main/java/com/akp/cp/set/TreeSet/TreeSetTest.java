@@ -1,4 +1,4 @@
-package com.akp.collection.set.TreeSet;
+package com.akp.cp.set.TreeSet;
 import java.util.Iterator;
 import java.util.TreeSet;
 

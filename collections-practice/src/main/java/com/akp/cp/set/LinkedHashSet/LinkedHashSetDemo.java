@@ -1,4 +1,4 @@
-package com.akp.collection.set.LinkedHashSet;
+package com.akp.cp.set.LinkedHashSet;
 
 import java.util.LinkedHashSet;
 

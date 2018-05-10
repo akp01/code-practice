@@ -1,4 +1,4 @@
-package com.akp.collection.Stack;
+package com.akp.cp.Stack;
 
 import java.util.Stack;
 

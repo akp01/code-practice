@@ -1,11 +1,11 @@
-package com.akp.collection.set;
+package com.akp.cp.set.HashSet;
 
 import java.util.HashSet;
 import java.util.Iterator;
 
 import com.akp.cp.common.Car;
 
-public class Test {
+public class HashSetTest {
 	public static void main(final String[] args) {
 		final HashSet<Car> carSet = new HashSet<Car>();
 

@@ -1,4 +1,4 @@
-package com.akp.collection.queue;
+package com.akp.cp.queue;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.PriorityQueue;

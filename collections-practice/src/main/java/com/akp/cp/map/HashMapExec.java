@@ -1,4 +1,4 @@
-package com.akp.collection.map;
+package com.akp.cp.map;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
