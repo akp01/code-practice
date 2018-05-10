@@ -2,6 +2,8 @@ package com.akp.cp.list.LInkedList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+import com.akp.cp.common.Car;
+
 public class LinkedListExec {
 	public static void main(String[] args) {
 		LinkedList<Car> linkedList = new LinkedList<Car>();

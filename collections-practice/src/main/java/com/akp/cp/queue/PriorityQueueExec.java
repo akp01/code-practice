@@ -3,6 +3,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.PriorityQueue;
 
+import com.akp.cp.common.Car;
+
 public class PriorityQueueExec {
 	public static void main(String[] args) {
 		PriorityQueue<Car> carsQueue = new PriorityQueue<Car>();

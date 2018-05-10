@@ -2,6 +2,8 @@ package com.akp.cp.list.ArrayList;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import com.akp.cp.common.Car;
+
 public class ArrayListExec {
 	public static void main(String[] args) {
 		ArrayList<Car> carsList = new ArrayList<Car>();
