@@ -1,8 +1,8 @@
 package com.akp.java8.sorting;
 
-import static java.util.Comparator.comparing;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 
@@ -26,10 +26,10 @@ public class SortComparatorTest {
 
 		System.out.println("---------------");
 		final Function<Person, Integer> byAge = Person::getAge;
-		people.stream().sorted(comparing(byAge)).forEach(System.out::println);
+		people.stream().sorted(Comparator.comparing(byAge)).forEach(System.out::println);
 
 		System.out.println("---------------");
 		final Function<Person, String> byName = Person::getName;
-		people.stream().sorted(comparing(byAge).thenComparing(byName)).forEach(System.out::println);
+		people.stream().sorted(Comparator.comparing(byAge).thenComparing(byName)).forEach(System.out::println);
 	}
 }

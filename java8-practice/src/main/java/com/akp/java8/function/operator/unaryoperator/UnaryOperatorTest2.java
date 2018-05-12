@@ -5,8 +5,8 @@ import java.util.function.UnaryOperator;
 public class UnaryOperatorTest2 {
 	public static void main(String[] args) {
 
-		UnaryOperator<Integer> operator1 = t -> t + 10;
-		UnaryOperator<Integer> operator2 = t -> t * 10;
+		UnaryOperator<Integer> operator1 = x -> x + 10;
+		UnaryOperator<Integer> operator2 = x -> x * 10;
 
 		// Using andThen()
 		int a = operator1.andThen(operator2).apply(5);

@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 public class BinaryOperatorMaxByMinByTest {
 
 	public static void main(String[] args) {
+		
 		Student s1 = new Student("Shyam", 22, "A");
 		Student s2 = new Student("Ram", 23, "A");
 		Student s3 = new Student("Mohan", 22, "B");

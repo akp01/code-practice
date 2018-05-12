@@ -13,8 +13,10 @@ public class BinaryOperatorTest {
 		map.put("X", "A");
 		map.put("Y", "B");
 		map.put("Z", "C");
+		
 		BinaryOperator<String> binaryOpt = (s1, s2) -> s1 + "-" + s2;
-		binaryOperatorFun(binaryOpt, map).forEach(x -> System.out.println(x));
+		
+		binaryOperatorFun(binaryOpt, map).forEach(System.out::println);
 	}
 
 	private static List<String> binaryOperatorFun(BinaryOperator<String> binaryOpt, Map<String, String> map) {
