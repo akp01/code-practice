@@ -8,17 +8,16 @@ public class FunctionTest {
 	public static void main(final String[] args) {
 		Function<Integer, Integer> add = x -> x + 1;
 		System.out.println(add.apply(7));
-
-		Function<String, String> stringAdd = getStringValue();
-		System.out.println(stringAdd.apply("10"));
-
+		
 		BiFunction<Integer, Integer, Integer> func = getValue();
 		System.out.println(func.apply(5, 7));
 
 		Function<Integer, Integer> add1 = x -> x + 1;
 		System.out.println(add1.apply(12));
-		
-		
+
+		Function<String, String> stringAdd = getStringValue();
+		System.out.println(stringAdd.apply("10"));
+
 		Function<String, String> concat = x -> x + 1;
 		System.out.println(concat.apply("54"));
 		

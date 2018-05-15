@@ -21,9 +21,10 @@ public class TheRightWayTest {
 		final List<Person> people = createPeople();
 
 		// list of all adult names in uppercase
-		final List<String> names = people.stream().filter(person -> person.getAge() > 17).map(Person::getName)
-				.map(String::toUpperCase).collect(() -> new ArrayList<>(), (list, name) -> list.add(name),
-						(list1, list2) -> list1.addAll(list2));
+		final List<String> names = people.stream()
+										 .filter(person -> person.getAge() > 17).map(Person::getName)
+										 .map(String::toUpperCase)
+										 .collect(() -> new ArrayList<>(), (list, name) -> list.add(name), (list1, list2) -> list1.addAll(list2));
 
 		System.out.println(names);
 
