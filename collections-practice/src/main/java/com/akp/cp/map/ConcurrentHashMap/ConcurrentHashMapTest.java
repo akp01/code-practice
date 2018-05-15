@@ -21,11 +21,13 @@ public class ConcurrentHashMapTest {
 		
 		// Create NUM_OF_TRUCKS Threads
 		ExecutorService executorService = Executors.newFixedThreadPool(ConcurrentHashMapTest.NUM_OF_TRUCKS);
+		
 		// Create NUM_OF_TRUCKS Callables with random operations (ARRIVAL or DEPARTURE)
 		DistributionCenterTruckQueue[] distributionCenterTruckQueue = new DistributionCenterTruckQueue[ConcurrentHashMapTest.NUM_OF_TRUCKS];
 		for (int i = 0;i < ConcurrentHashMapTest.NUM_OF_TRUCKS;i++) {
 			distributionCenterTruckQueue[i] = new DistributionCenterTruckQueue(ConcurrentHashMapTest.truckList[i], DistributionCenterTruckQueue.OPERATION.values()[ConcurrentHashMapTest.random(0, 1)]);
 		}
+		
 		// Execute the Callables and get the result of each operation
 		for (int i = 0;i < ConcurrentHashMapTest.NUM_OF_TRUCKS;i++) {
 			try {
