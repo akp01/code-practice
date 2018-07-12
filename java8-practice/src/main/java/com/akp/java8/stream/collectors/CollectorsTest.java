@@ -19,36 +19,81 @@ public class CollectorsTest {
 		List<String> stringList = Arrays.asList("a", "bb", "ccc", "dd");
 		
 		// Collectors.toList()
-		List<String> result = stringList.stream().collect(Collectors.toList());
-		result.stream().forEach(System.out::println);
+		toList(stringList);
 		
 		// Collectors.toSet()
-		Set<String> result1 = stringList.stream().collect(Collectors.toSet());
-		result1.stream().forEach(System.out::println);
+		toSet(stringList);
 		
 		// Collectors.toCollection()
-		List<String> result2= stringList.stream()
-				  .collect(Collectors.toCollection(LinkedList::new));
+		toCollection(stringList);
 				  
 		// Collectors.toMap()
-		Map<String, Integer> result3 = stringList.stream()
-				  .collect(Collectors.toMap(Function.identity(), String::length));
-		System.out.println("Print Map entries : ");
-		Map<String, Integer> result4= stringList.stream()
-				  .collect(Collectors.toMap(Function.identity(), String::length, (i1, i2) -> i1));
-		result4.forEach((k, v) -> System.out.println((k + ":" + v)));
-		System.out.println("Print Map entry set values : ");
-		result4.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "/" + e.getValue()));
-		
-		System.out.println("Print Map key values using values : ");
-		result4.keySet().forEach(System.out::println);
-		result4.values().forEach(System.out::println);
+		toMap(stringList);
 		
 		// Collectors.collectingAndThen()
-		List<String> result5 = stringList.stream()
-				  .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
+		collectingAndThen(stringList);
 		
 		// Collectors.joining()
+		joining(stringList);
+		
+		// Collectors.counting()
+		counting(stringList);
+		
+		// Collectors.summarizingDouble/Long/Int()
+		summarizingDouble(stringList);
+		
+		// Collectors.averagingDouble/Long/Int()
+		averagingDouble(stringList);
+		
+		// Collectors.summingDouble/Long/Int()
+		summingDouble(stringList);
+		
+		// Collectors.maxBy()/minBy()
+		maxBy(stringList);
+		
+		// Collectors.groupingBy()
+		groupingBy(stringList);
+		
+		// Collectors.partitioningBy()
+		partitioningBy(stringList);
+	}
+
+	private static void partitioningBy(List<String> stringList) {
+		Map<Boolean, List<String>> result15 = stringList.stream()
+				  .collect(Collectors.partitioningBy(s -> s.length() > 2));
+	}
+
+	private static void groupingBy(List<String> stringList) {
+		Map<Integer, Set<String>> result14 = stringList.stream()
+				  .collect(Collectors.groupingBy(String::length, Collectors.toSet()));
+	}
+
+	private static void maxBy(List<String> stringList) {
+		Optional<String> result13 = stringList.stream()
+				  .collect(Collectors.maxBy(Comparator.naturalOrder()));
+	}
+
+	private static void summingDouble(List<String> stringList) {
+		Double result12 = stringList.stream()
+				  .collect(Collectors.summingDouble(String::length));
+	}
+
+	private static void averagingDouble(List<String> stringList) {
+		Double result11 = stringList.stream()
+				  .collect(Collectors.averagingDouble(String::length));
+	}
+
+	private static void summarizingDouble(List<String> stringList) {
+		DoubleSummaryStatistics result10 = stringList.stream()
+				  .collect(Collectors.summarizingDouble(String::length));
+	}
+
+	private static void counting(List<String> stringList) {
+		Long result9 = stringList.stream()
+				  .collect(Collectors.counting());
+	}
+
+	private static void joining(List<String> stringList) {
 		String result6 = stringList.stream()
 				  .collect(Collectors.joining());
 		
@@ -57,37 +102,43 @@ public class CollectorsTest {
 		
 		String result8 = stringList.stream()
 				  .collect(Collectors.joining(" ", "PRE-", "-POST"));
-		
-		
-		// Collectors.counting()
-		Long result9 = stringList.stream()
-				  .collect(Collectors.counting());
-		
-		// Collectors.summarizingDouble/Long/Int()
-		DoubleSummaryStatistics result10 = stringList.stream()
-				  .collect(Collectors.summarizingDouble(String::length));
-		
-		// Collectors.averagingDouble/Long/Int()
-		Double result11 = stringList.stream()
-				  .collect(Collectors.averagingDouble(String::length));
-		
-		// Collectors.summingDouble/Long/Int()
-		Double result12 = stringList.stream()
-				  .collect(Collectors.summingDouble(String::length));
-		
-		// Collectors.maxBy()/minBy()
-		Optional<String> result13 = stringList.stream()
-				  .collect(Collectors.maxBy(Comparator.naturalOrder()));
-		
-		// Collectors.groupingBy()
-		Map<Integer, Set<String>> result14 = stringList.stream()
-				  .collect(Collectors.groupingBy(String::length, Collectors.toSet()));
-		
-		// Collectors.partitioningBy()
-		Map<Boolean, List<String>> result15 = stringList.stream()
-				  .collect(Collectors.partitioningBy(s -> s.length() > 2));
-		
+	}
 
+	private static void collectingAndThen(List<String> stringList) {
+		List<String> result5 = stringList.stream()
+				  .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
+	}
+
+	private static void toMap(List<String> stringList) {
+		Map<String, Integer> result3 = stringList.stream()
+				  .collect(Collectors.toMap(Function.identity(), String::length));
+		
+		System.out.println("Print Map entries : ");
+		Map<String, Integer> result4= stringList.stream()
+				  .collect(Collectors.toMap(Function.identity(), String::length, (i1, i2) -> i1));
+		result4.forEach((k, v) -> System.out.println((k + ":" + v)));
+		
+		System.out.println("Print Map entry set values : ");
+		result4.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "/" + e.getValue()));
+		
+		System.out.println("Print Map key values using values : ");
+		result4.keySet().forEach(System.out::println);
+		result4.values().forEach(System.out::println);
+	}
+
+	private static void toCollection(List<String> stringList) {
+		List<String> result2= stringList.stream()
+				  .collect(Collectors.toCollection(LinkedList::new));
+	}
+
+	private static void toSet(List<String> stringList) {
+		Set<String> result1 = stringList.stream().collect(Collectors.toSet());
+		result1.stream().forEach(System.out::println);
+	}
+
+	private static void toList(List<String> stringList) {
+		List<String> result = stringList.stream().collect(Collectors.toList());
+		result.stream().forEach(System.out::println);
 	}
 
 }
