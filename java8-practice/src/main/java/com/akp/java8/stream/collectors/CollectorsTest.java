@@ -57,6 +57,45 @@ public class CollectorsTest {
 		// Collectors.partitioningBy()
 		partitioningBy(stringList);
 	}
+	
+	private static void toList(List<String> stringList) {
+		List<String> result = stringList.stream().collect(Collectors.toList());
+		result.stream().forEach(System.out::println);
+	}
+	
+	private static void toSet(List<String> stringList) {
+		Set<String> result1 = stringList.stream().collect(Collectors.toSet());
+		result1.stream().forEach(System.out::println);
+	}
+	
+	private static void toCollection(List<String> stringList) {
+		List<String> result2= stringList.stream()
+				  .collect(Collectors.toCollection(LinkedList::new));
+	}
+	
+	private static void toMap(List<String> stringList) {
+		Map<String, Integer> result3 = stringList.stream()
+				  .collect(Collectors.toMap(Function.identity(), String::length));
+		
+		System.out.println("Print Map entries : ");
+		Map<String, Integer> result4= stringList.stream()
+				  .collect(Collectors.toMap(Function.identity(), String::length, (i1, i2) -> i1));
+		result4.forEach((k, v) -> System.out.println((k + ":" + v)));
+		
+		System.out.println("Print Map entry set values : ");
+		result4.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "/" + e.getValue()));
+		
+		System.out.println("Print Map key values using values : ");
+		result4.keySet().forEach(System.out::println);
+		result4.values().forEach(System.out::println);
+	}
+
+	
+	
+	
+	
+	
+	
 
 	private static void partitioningBy(List<String> stringList) {
 		Map<Boolean, List<String>> result15 = stringList.stream()
@@ -109,36 +148,10 @@ public class CollectorsTest {
 				  .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
 	}
 
-	private static void toMap(List<String> stringList) {
-		Map<String, Integer> result3 = stringList.stream()
-				  .collect(Collectors.toMap(Function.identity(), String::length));
-		
-		System.out.println("Print Map entries : ");
-		Map<String, Integer> result4= stringList.stream()
-				  .collect(Collectors.toMap(Function.identity(), String::length, (i1, i2) -> i1));
-		result4.forEach((k, v) -> System.out.println((k + ":" + v)));
-		
-		System.out.println("Print Map entry set values : ");
-		result4.entrySet().stream().forEach(e -> System.out.println(e.getKey() + "/" + e.getValue()));
-		
-		System.out.println("Print Map key values using values : ");
-		result4.keySet().forEach(System.out::println);
-		result4.values().forEach(System.out::println);
-	}
+	
 
-	private static void toCollection(List<String> stringList) {
-		List<String> result2= stringList.stream()
-				  .collect(Collectors.toCollection(LinkedList::new));
-	}
+	
 
-	private static void toSet(List<String> stringList) {
-		Set<String> result1 = stringList.stream().collect(Collectors.toSet());
-		result1.stream().forEach(System.out::println);
-	}
-
-	private static void toList(List<String> stringList) {
-		List<String> result = stringList.stream().collect(Collectors.toList());
-		result.stream().forEach(System.out::println);
-	}
+	
 
 }
