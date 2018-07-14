@@ -1,4 +1,4 @@
-package com.akp.java8.function.function;
+package com.akp.java8.function.function.function;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;

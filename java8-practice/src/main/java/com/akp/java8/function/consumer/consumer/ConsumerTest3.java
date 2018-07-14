@@ -1,4 +1,4 @@
-package com.akp.java8.function.consumer;
+package com.akp.java8.function.consumer.consumer;
 
 import java.util.function.Consumer;
 

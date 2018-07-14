@@ -1,4 +1,4 @@
-package com.akp.java8.function.function;
+package com.akp.java8.function.function.bifunction;
 
 import java.util.ArrayList;
 import java.util.Arrays;
