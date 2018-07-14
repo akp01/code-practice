@@ -17,7 +17,6 @@ public class MobileTesterWithOptional {
 		int width2 = mService.getMobileScreenWidth(Optional.of(mobile2));
 		System.out.println("Apple iPhone 16s Screen Width = " + width2);
 	}
-
 }
 
 class DisplayFeatures1 {
