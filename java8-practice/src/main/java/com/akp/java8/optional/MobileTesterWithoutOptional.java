@@ -22,3 +22,97 @@ public class MobileTesterWithoutOptional {
 	}
 
 }
+
+class DisplayFeatures {
+
+	private String size; // In inches
+	private ScreenResolution resolution;
+
+	public DisplayFeatures(String size, ScreenResolution resolution) {
+		this.size = size;
+		this.resolution = resolution;
+	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public ScreenResolution getResolution() {
+		return resolution;
+	}
+
+}
+
+class MobileService {
+
+	public int getMobileScreenWidth(Mobile mobile) {
+
+		if (mobile != null) {
+			DisplayFeatures dfeatures = mobile.getDisplayFeatures();
+			if (dfeatures != null) {
+				ScreenResolution resolution = dfeatures.getResolution();
+				if (resolution != null) {
+					return resolution.getWidth();
+				}
+			}
+		}
+		return 0;
+
+	}
+
+}
+
+
+class Mobile {
+
+	private long id;
+	private String brand;
+	private String name;
+	private DisplayFeatures displayFeatures;
+	// Likewise we can see Memory Features, Camera Features etc.
+
+	public Mobile(long id, String brand, String name, DisplayFeatures displayFeatures) {
+		this.id = id;
+		this.brand = brand;
+		this.name = name;
+		this.displayFeatures = displayFeatures;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public DisplayFeatures getDisplayFeatures() {
+		return displayFeatures;
+	}
+
+}
+
+
+class ScreenResolution {
+
+	private int width;
+	private int height;
+
+	public ScreenResolution(int width, int height) {
+		this.width = width;
+		this.height = height;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+}
