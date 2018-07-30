@@ -13,7 +13,7 @@ import java.util.function.Function;
  * @author akp
  *
  */
-public class CountCharactersInASentence {
+public class CountCharacters {
 
 	public static void main(String[] args) {
 		String inputStr = "Sun rises in the east and sets in west";

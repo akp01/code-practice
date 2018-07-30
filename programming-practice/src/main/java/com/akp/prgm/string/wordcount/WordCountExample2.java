@@ -13,8 +13,10 @@ public class WordCountExample2 {
 	public static void main(String[] args) throws IOException {
 		Path path = Paths.get("src/main/resources/book.txt");
 
-		Map<String, Long> wordCount = Files.lines(path).flatMap(line -> Arrays.stream(line.trim().split("\\s")))
-				.map(word -> word.replaceAll("[^a-zA-Z]", "").toLowerCase().trim()).filter(word -> word.length() > 0)
+		Map<String, Long> wordCount = Files.lines(path)
+				.flatMap(line -> Arrays.stream(line.trim().split("\\s")))
+				.map(word -> word.replaceAll("[^a-zA-Z]", "").toLowerCase().trim())
+				.filter(word -> word.length() > 0)
 				.map(word -> new SimpleEntry<>(word, 1))
 				.collect(Collectors.groupingBy(SimpleEntry::getKey, Collectors.counting()));
 
