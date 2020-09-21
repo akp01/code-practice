@@ -3,7 +3,7 @@
  */
 package com.akp.sorting;
 
-import com.akp.ds.print.array.PrintArray;
+import com.akp.ds.array.PrintArray;
 
 /**
  * @author AkshayaParida

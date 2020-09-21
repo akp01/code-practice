@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.akp.search.binarysearch;
+package com.akp.ds.search;
 
 /**
  * @author akp

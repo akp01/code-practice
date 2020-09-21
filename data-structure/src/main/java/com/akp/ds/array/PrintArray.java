@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.akp.ds.print.array;
+package com.akp.ds.array;
 
 /**
  * @author akp

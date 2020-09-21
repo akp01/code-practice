@@ -1,4 +1,4 @@
-package com.akp.ds.string.palindrome;
+package com.akp.ds.string;
 
 import java.util.Scanner;
 
