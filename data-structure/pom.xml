@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.akp</groupId>
-  <artifactId>data-structure</artifactId>
+  <artifactId>data-structure-algorithim</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
