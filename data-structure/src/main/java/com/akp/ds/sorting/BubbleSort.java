@@ -1,4 +1,4 @@
-package com.akp.sorting;
+package com.akp.ds.sorting;
 
 public class BubbleSort {
 

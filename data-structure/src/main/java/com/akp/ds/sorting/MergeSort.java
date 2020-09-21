@@ -1,12 +1,8 @@
 /**
  * 
  */
-package com.akp.sorting;
+package com.akp.ds.sorting;
 
-/**
- * @author AkshayaParida
- *
- */
 public class MergeSort {
 
 	/**

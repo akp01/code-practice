@@ -1,14 +1,10 @@
 /**
  * 
  */
-package com.akp.sorting;
+package com.akp.ds.sorting;
 
 import com.akp.ds.array.PrintArray;
 
-/**
- * @author AkshayaParida
- *
- */
 public class QuickSort {
 
 	/**
